@@ -6,7 +6,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+html, body, #app {
+  height: 100%;
+}
 body {
   font-family: 'Lato', 'Helvetica Neue', sans-serif;
   background-color: #F4F4F7;
