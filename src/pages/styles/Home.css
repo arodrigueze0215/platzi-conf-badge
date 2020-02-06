@@ -1,0 +1,51 @@
+.Background__universe {
+    background: url("../../images/stars.svg"),  #1B1B25;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Content__platziConf {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 10%;
+    
+}
+.text__platziConf {
+    display: flex;
+    flex-direction: column;
+    
+}
+.text__platziConf > h1 {
+    margin: auto 2%;
+    
+}
+.text__platziConf > label {
+    margin: auto 8%;
+    
+}
+.text__platziConf > a {
+    margin: 4% 25%;
+}
+.Content__astronauts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+
+}
