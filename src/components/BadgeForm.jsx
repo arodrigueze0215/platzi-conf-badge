@@ -2,7 +2,7 @@ import React from 'react';
 
 class BadgeForm extends React.Component {
     render() {
-        const { formValues, onChange } = this.props;
+        const { formValues, onChange,onSubmit } = this.props;
         return (
             <div>
                 <h1>New Attendant</h1>
@@ -59,17 +59,13 @@ class BadgeForm extends React.Component {
                     </div>
                     <button
                         type="button"
-                        onClick={this.handleClick}
+                        onClick={onSubmit}
                         className="btn btn-primary">
                             Save
                     </button>
                 </form>
             </div>
         )
-    }
-    handleClick = e => {
-        console.log(this.state)
-
     }
 }
 export default BadgeForm;
