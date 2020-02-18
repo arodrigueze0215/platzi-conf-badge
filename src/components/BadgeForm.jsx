@@ -13,8 +13,8 @@ class BadgeForm extends React.Component {
                             onChange={onChange}
                             className="form-control"
                             type="text"
-                            name="first_name"
-                            value={formValues.first_name}
+                            name="firstName"
+                            value={formValues.firstName}
                             />
                     </div>
                     <div className="form-group">
@@ -23,8 +23,8 @@ class BadgeForm extends React.Component {
                             onChange={onChange}
                             className="form-control"
                             type="text"
-                            name="last_name"
-                            value={formValues.last_name}
+                            name="lastName"
+                            value={formValues.lastName}
                             />
                     </div>
                     <div className="form-group">
@@ -43,8 +43,8 @@ class BadgeForm extends React.Component {
                             onChange={onChange}
                             className="form-control"
                             type="text"
-                            name="job_title"
-                            value={formValues.job_title}
+                            name="jobTitle"
+                            value={formValues.jobTitle}
                             />
                     </div>
                     <div className="form-group">

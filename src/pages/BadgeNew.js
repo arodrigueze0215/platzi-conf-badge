@@ -9,11 +9,11 @@ import api from '../api';
 class BadgeNew extends React.Component {
   state = { 
     form: {
-      first_name: '',
-      last_name: '',
+      firstName: '',
+      lastName: '',
       twitter: '',
       email: '',
-      job_title: ''
+      jobTitle: ''
     }
   }
   handleChange = e => {
@@ -45,10 +45,10 @@ class BadgeNew extends React.Component {
           <div className="row">
             <div className="col-6">
               <Badge
-                firstName={form.first_name || 'First name'}
-                lastName={form.last_name || 'Last name'}
+                firstName={form.firstName || 'First name'}
+                lastName={form.lastName || 'Last name'}
                 twitter={form.twitter || 'Twitter'}
-                jobTitle={form.job_title || 'Job title'}
+                jobTitle={form.jobTitle || 'Job title'}
                 email={form.email || 'Email'}
                 avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
               />
