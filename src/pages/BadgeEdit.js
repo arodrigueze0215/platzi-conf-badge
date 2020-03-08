@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles/BadgeNew.css';
+import './styles/BadgeEdit.css';
 import header from '../images/platziconf-logo.svg';
 import Badge from '../components/Badge.jsx';
 import BadgeForm from '../components/BadgeForm.jsx';
@@ -8,9 +8,9 @@ import Loader from '../components/Loader.jsx';
 import PageError from '../components/PageError.jsx';
 import api from '../api';
 
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
   state = { 
-    loading: false,
+    loading: true,
     error: undefined,
     form: {
       firstName: '',
@@ -32,10 +32,28 @@ class BadgeNew extends React.Component {
     e.preventDefault();
     try {
       this.setState({loading: true, error:undefined});
-      await api.badges.create(this.state.form);
+      await api.badges.update(
+        this.props.match.params.badgeId,
+        this.state.form
+        );
       this.props.history.push('/badges');
     } catch (error) {
       this.setState({loading: false, error});
+    }
+  }
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData = async e => {
+    this.setState({loading: true, error: undefined});
+    try {
+      const data = await api.badges.read(
+        this.props.match.params.badgeId
+        );
+        this.setState({loading:false, error:undefined, form: data});
+      } catch (error) {
+        this.setState({loading: false, error: error});
     }
   }
   render() {
@@ -45,8 +63,8 @@ class BadgeNew extends React.Component {
     } else {
       return (
         <React.Fragment>
-          <div className="BadgeNew__hero">
-            <img className="BadgeNew__hero-image img-fluid" src={header} alt="Logo" />
+          <div className="BadgeEdit__hero">
+            <img className="BadgeEdit__hero-image img-fluid" src={header} alt="Logo" />
           </div>
   
           <div className="container">
@@ -67,7 +85,7 @@ class BadgeNew extends React.Component {
                     onSubmit = {this.handleSubmit} 
                     formValues = {form}
                     formError = {error}
-                    title= "New Attendant"
+                    title= "Edit Attendant"
                   />
               </div>
             </div>
@@ -78,4 +96,4 @@ class BadgeNew extends React.Component {
   }
 }
 
-export default BadgeNew;
+export default BadgeEdit;

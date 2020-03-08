@@ -2,10 +2,10 @@ import React from 'react';
 
 class BadgeForm extends React.Component {
     render() {
-        const { formValues, onChange,onSubmit } = this.props;
+        const { formValues, onChange,onSubmit, title } = this.props;
         return (
             <div>
-                <h1>New Attendant</h1>
+                <h1>{title}</h1>
                 <form>
                     <div className="form-group">
                         <label>First Name</label>
